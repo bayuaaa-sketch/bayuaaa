@@ -1,73 +1,3 @@
-<summary><b>Klik untuk melihat kode lengkap</b> (coba kerjakan sendiri dulu!)</summary><?php
-// ============================================
-// BAGIAN 1: DATA & LOGIKA (PHP)
-// ============================================
-
-// Atur zona waktu ke WITA (Bali) agar jam sesuai
-date_default_timezone_set('Asia/Makassar');
-
-// Data diri (ganti dengan data kamu sendiri)
-$nama       = "I Putu Bayu Aryanata";
-$panggilan  = "BayuAryanata";
-$peran      = "Mahasiswa Rekayasa Sistem Komputer";
-$tahunLahir = 2006;
-$kota       = "Denpasar";
-$github     = "bayuaaa";
-$email      = "email@contoh.com";
-$instagram  = "https://www.instagram.com/bayuaaa_08?cplk=MWpjdHRscmtiZW51cA==";
-$minat      = "Memiliki minat dalam teknologi informasi dan jaringan komputer";
-$tentang    = " termimakasih sudah membuka CV ini,
-                saya merupakan lulusan SMK Negeri 1 Denpasar
-                jurusan Teknik Komputer dan Jaringan, dan saya melanjutkan pendidikan 
-                saya di kampus Institut Bisnis dan Teknologi Indonesia (INSTIKI). Saya memiliki
-                pemahaman mengenai komponen komputer, pengelolaan
-                sistem jaringan, dan pengoperasian komputer.
-                Saya juga memiliki minat untuk terus mengembangkan
-                kemampuan di bidang teknologi informasi.";
-$pendidkan1 = "SMK Negeri 1 Denpasar ";
-$pendidkan2 = "Institut Bisnis dan Teknologi Indonesia (INSTIKI)";
-$jurusan1   = "Teknik Komputer dan Jaringan (TKJ)";
-$jurusan2   = "Rekayasa Sistem Komputer";
-$pengalaman = "<li>PKL Technical Support - PT Biseka</li>
-                <li>PKL Pemasangan Jaringan FTTH - PT Greenet</li>
-                <li>PSB Provisioning IndiHome, IndiBase - PT Telkom Akses</li>
-                <li>Anggota HIMA RSK - Seksi Humas</li>";
-$keahlian   ="<li>Memahami konsep FTTH (Fiber To The Home)</li>
-                <li>Memahami IP Address dan jaringan komputer</li>
-                <li>Menggunakan Cisco Packet Tracer</li>
-                <li>Mengoperasikan Windows dan Linux Debian</li>
-                <li>Memahami komponen dan perakitan komputer</li>
-                <li>Menggunakan Microsoft Office</li>
-                <li>Memahami dasar pemrograman Python</li>";
-$hobiminat  = "<li>Mempelajari teknologi informasi</li>
-                <li>Mempelajari bahasa dan budaya Jepang</li>
-                <li>Membaca berita dan perkembangan teknologi,politik, dan ekonomi</li>
-                <li>menonton anime</li>";
-
-
-// Menghitung umur dari tahun lahir
-$tahunSekarang = (int) date('Y');
-$umur          = $tahunSekarang - $tahunLahir;
-
-// Menentukan sapaan berdasarkan jam sekarang (0-23)
-$jam = (int) date('H');
-
-if ($jam >= 4 && $jam < 11) {
-    $sapaan = "Selamat pagi";
-} elseif ($jam >= 11 && $jam < 15) {
-    $sapaan = "Selamat siang";
-} elseif ($jam >= 15 && $jam < 18) {
-    $sapaan = "Selamat sore";
-} else {
-    $sapaan = "Selamat malam";
-}
-
-// Status: masih remaja atau sudah dewasa (operator ternary)
-$kategoriUmur = ($umur >= 18) ? "dewasa" : "remaja";
-
-// Tanggal hari ini dalam format 13-10-2026
-$tanggalHariIni = date('d-m-Y');
-?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -240,11 +170,10 @@ $tanggalHariIni = date('d-m-Y');
 
 
     <header>
-        <h1> <?= $nama ?> </h1>
-        <p>Umur: <?= $umur ?> tahun (<?= $kategoriUmur ?>)</p>
-        <p><strong><?= $peran?></strong></p>
+        <h1>I Putu Bayu Aryanata</h1>
+        <p><strong>Mahasiswa Rekayasa Sistem Komputer</strong></p>
         <p>
-            <em> <?= $minat?></em>
+            <em>Memiliki minat dalam teknologi informasi dan jaringan komputer.</em>
         </p>
 
     
@@ -270,7 +199,13 @@ $tanggalHariIni = date('d-m-Y');
             <h2>Tentang Saya</h2>
 
             <p>
-                <?= $sapaan ?> <?=$tentang?>
+                Saya merupakan lulusan SMK Negeri 1 Denpasar
+                jurusan Teknik Komputer dan Jaringan, dan saya melanjutkan pendidikan 
+                saya di kampus Institut Bisnis dan Teknologi Indonesia (INSTIKI). Saya memiliki
+                pemahaman mengenai komponen komputer, pengelolaan
+                sistem jaringan, dan pengoperasian komputer.
+                Saya juga memiliki minat untuk terus mengembangkan
+                kemampuan di bidang teknologi informasi.
             </p>
 
             <p>
@@ -286,12 +221,12 @@ $tanggalHariIni = date('d-m-Y');
 
             <ol>
                 <li>
-                    <?= $pendidkan1 ?> -
-                    <?= $jurusan1 ?> 
+                    SMK Negeri 1 Denpasar -
+                    Teknik Komputer dan Jaringan (TKJ)
                 </li>
                 <li>
-                    <?= $pendidkan2 ?> -
-                    <?= $jurusan2 ?>
+                    Institut Bisnis dan Teknologi Indonesia (INSTIKI) -
+                    Rekayasa Sistem Komputer
                 </li>
             </ol>
 
@@ -307,14 +242,14 @@ $tanggalHariIni = date('d-m-Y');
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td><?= $pendidkan1 ?></td>
-                        <td><?= $jurusan2 ?></td>
+                        <td>SMK Negeri 1 Denpasar</td>
+                        <td>Teknik Komputer dan Jaringan</td>
                     </tr>
 
                     <tr>
                         <td>2</td>
-                        <td><?= $pendidkan2 ?></td>
-                        <td><?= $jurusan2 ?></td>
+                        <td>INSTIKI</td>
+                        <td>Rekayasa Sistem Komputer</td>
                     </tr>
                 </tbody>
             </table>
@@ -325,7 +260,13 @@ $tanggalHariIni = date('d-m-Y');
             <h2>Pengalaman</h2>
 
             <ul>
-                <?=$pengalaman?>
+                <li>PKL Technical Support - PT Biseka</li>
+                <li>PKL Pemasangan Jaringan FTTH - PT Greenet</li>
+                <li>
+                    PSB Provisioning IndiHome, IndiBase -
+                    PT Telkom Akses
+                </li>
+                <li>Anggota HIMA RSK - Seksi Humas</li>
             </ul>
         </section>
 
@@ -334,13 +275,22 @@ $tanggalHariIni = date('d-m-Y');
             <h2>Keahlian</h2>
 
             <ul>
-                <?= $keahlian ?>
+                <li>Memahami konsep FTTH (Fiber To The Home)</li>
+                <li>Memahami IP Address dan jaringan komputer</li>
+                <li>Menggunakan Cisco Packet Tracer</li>
+                <li>Mengoperasikan Windows dan Linux Debian</li>
+                <li>Memahami komponen dan perakitan komputer</li>
+                <li>Menggunakan Microsoft Office</li>
+                <li>Memahami dasar pemrograman Python</li>
             </ul>
 
             <h2>Hobi dan Minat</h2>
 
             <ul>
-                <?=$hobiminat?>
+                <li>Mempelajari teknologi informasi</li>
+                <li>Mempelajari bahasa dan budaya Jepang</li>
+                <li>Membaca berita dan perkembangan teknologi,politik, dan ekonomi</li>
+                <li>menonton anime</li>
             </ul>
         </section>
 
@@ -359,7 +309,7 @@ $tanggalHariIni = date('d-m-Y');
                     GitHub
                 </a>
 
-                <a href="<?= $instagram ?>"
+                <a href="https://www.instagram.com/bayuaaa_08?cplk=MWpjdHRscmtiZW51cA=="
                    target="_blank"
                    rel="noopener noreferrer">
                     instagram
@@ -426,9 +376,8 @@ $tanggalHariIni = date('d-m-Y');
 
     <footer>
         <p>
-           Halaman ini dibuat dengan PHP 
-           &middot; Diakses pada <?= $tanggalHariIni ?>, pukul <?= date('H:i') ?> WITA 
-           <br>&copy; <?= $tahunSekarang ?> <?=$nama?>.Semua hak dilindungi.
+            &copy; 2026 I Putu Bayu Aryanata.
+            Semua hak dilindungi.
         </p>
     </footer>
 
